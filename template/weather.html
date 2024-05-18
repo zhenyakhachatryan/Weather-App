@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather.css') }}"> 
+    
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <title>Daily Weather</title>
+      
+</head>
+<body>	
+	<div class="container"></div>>
+	    <br><br><br>
+		<div class="text"></div>
+			<h2>WEATHER</h2>
+        <br>
+        <div class="text"><p>{{today_date}}</p></div>
+		<br>
+		<div class="text">		   
+			<p>Get Weather Details of Any City Around the World.</p>		   
+		</div>
+        <br>
+		<div class="text">					
+			{% block content %}	                		
+                <form action='{{ url_for("show_weather")}}' method="post">
+				<div class="form-group">
+				<label for="City_name"></label>
+				<input type="text" id="City_name" name="City_name" value="{{City_name}}" placeholder="Enter the Location">
+                <button class="submit">Search</button>
+				{% if Error is defined and Error %}
+					<br><br><span class="error_message">Error: Please Enter Valid City Name.</span></br>
+				{% endif %}
+				</div>				
+			{% endblock %}
+			{% if data is defined and data %}
+            <br>
+			<div class="container1">
+				<thead>
+					<tr>
+						<th>Weather: {{weather}}</th>
+                        <br>
+                        <th>Temperature: {{tempreture}} °C </th>
+                        <br>
+                        <th>Feels Like: {{feels_like}} °C </th>
+                        <br>
+						<th>Pressure: {{ data['main']['pressure'] }} hPa</th>
+                        <br>
+						<th>Humidity: {{ data['main']['humidity'] }} % </th>
+					</tr>
+				</thead>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</body>
+</html>
