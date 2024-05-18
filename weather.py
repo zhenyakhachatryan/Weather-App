@@ -1,13 +1,16 @@
 from flask import Flask,request,render_template
-import requests
-from datetime import date
 from dotenv import load_dotenv
+from datetime import date
+import requests
 import os
 
-load_dotenv()
+
 
 app=Flask(__name__,template_folder='template')
 API_KEY=os.environ.get('API_KEY')
+
+load_dotenv()
+
 
 @app.route('/', methods=["GET","POST"])
 def show_weather():
@@ -39,5 +42,5 @@ def show_weather():
     
 
 if __name__ =='__main__':
-    app.run(debug=True)
+    app.run()
 
