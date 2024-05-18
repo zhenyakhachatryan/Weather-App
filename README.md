@@ -13,7 +13,7 @@ A simple web application that provides weather information for different locatio
 
     ```bash
     git clone https://github.com/zhenyakhachatryan/Weather-App.git
-    cd weather-app
+    cd Weather-App
     ```
 
 2. Create a virtual environment:
