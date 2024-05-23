@@ -1,4 +1,4 @@
-##  "Weather-App" 
+##  "Weather App" 
 A simple web application that provides weather information for different locations. The app fetches data from a weather API and displays the current weather, temperature, humidity, and other relevant information.
 
 ## Features
@@ -68,3 +68,9 @@ A simple web application that provides weather information for different locatio
 - Flask
 - HTML/CSS
 - Weather API (OpenWeatherMap)
+
+##Contact
+
+For questions or support, please contact me at khachatryanzhenya3@gmail.com.
+
+Thank you for using Weather App!
